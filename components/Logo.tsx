@@ -3,8 +3,8 @@ type LogoProps = {
 };
 
 /**
- * Brand mark: monochrome vertical bar + handwritten lowercase wordmark,
- * mirroring the official triqualis logo (white bar and wordmark on black).
+ * Brand mark: yellow vertical bar + handwritten lowercase wordmark,
+ * mirroring the official triqualis logo.
  */
 export default function Logo({ dark = false }: LogoProps) {
   return (
@@ -15,7 +15,7 @@ export default function Logo({ dark = false }: LogoProps) {
       />
       <span className="flex flex-col leading-none">
         <span
-          className={`font-logo text-[1.7rem] leading-none tracking-wide ${
+          className={`font-logo text-[1.45rem] leading-none font-semibold tracking-tight ${
             dark ? "text-white" : "text-slate-900"
           }`}
         >

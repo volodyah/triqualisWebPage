@@ -14,13 +14,13 @@ export default function Process() {
           align="center"
           eyebrow="Our Engagement Process"
           title="From first conversation to production ownership."
-          description="A disciplined, transparent path we've refined across dozens of engagements. You always know where the work stands, what ships next, and who is accountable for it."
+          description="A disciplined, transparent path — whether you need a single developer or a full delivery team. You always know where the work stands, what ships next, and who is accountable for it."
         />
 
         <div className="relative mt-16">
           {/* Horizontal connector on large screens */}
           <div
-            className="absolute top-7 right-[12%] left-[12%] hidden h-px bg-gradient-to-r from-teal-200 via-teal-300 to-teal-300 lg:block"
+            className="absolute top-7 right-[12%] left-[12%] hidden h-px bg-gradient-to-r from-slate-200 via-teal-200 to-yellow-200 lg:block"
             aria-hidden="true"
           />
 
@@ -31,8 +31,8 @@ export default function Process() {
                   <span
                     className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl font-mono text-lg font-bold shadow-lg transition-transform duration-300 group-hover:scale-110 ${
                       i === PROCESS.length - 1
-                        ? "bg-emerald-600 text-white shadow-emerald-600/30"
-                        : "bg-teal-700 text-white shadow-teal-700/30"
+                        ? "bg-yellow-400 text-slate-950 shadow-yellow-400/20"
+                        : "bg-slate-950 text-white shadow-slate-900/20"
                     }`}
                   >
                     {step.step}
@@ -41,7 +41,7 @@ export default function Process() {
                     <span className="font-mono text-[11px] font-bold tracking-wider text-slate-400 uppercase">
                       {step.duration}
                     </span>
-                    <h3 className="text-lg font-bold tracking-tight text-slate-900">
+                    <h3 className="text-lg font-semibold tracking-tight text-slate-900">
                       {step.title}
                     </h3>
                   </div>
@@ -53,10 +53,10 @@ export default function Process() {
                   {step.outcomes.map((outcome) => (
                     <li
                       key={outcome}
-                      className="flex items-start gap-2 rounded-lg border border-slate-100 bg-slate-50/80 px-3 py-2 text-xs font-medium text-slate-700 transition-colors duration-200 group-hover:border-teal-100 group-hover:bg-teal-50/40"
+                      className="flex items-start gap-2 rounded-lg border border-slate-100 bg-slate-50/80 px-3 py-2 text-xs font-medium text-slate-700 transition-colors duration-200 group-hover:border-teal-100 group-hover:bg-white"
                     >
                       <svg
-                        className="mt-px h-3.5 w-3.5 shrink-0 text-emerald-600"
+                        className="mt-px h-3.5 w-3.5 shrink-0 text-teal-700"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                         aria-hidden="true"

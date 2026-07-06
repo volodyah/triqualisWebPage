@@ -21,12 +21,9 @@ const SOCIAL_ICONS: Record<"linkedin" | "github" | "x", React.ReactNode> = {
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-slate-950">
+    <footer className="relative overflow-hidden bg-[#0b1120]">
       <div className="bg-grid-light absolute inset-0 opacity-40" aria-hidden="true" />
-      <div
-        className="absolute -top-24 left-1/3 h-64 w-[560px] rounded-full bg-teal-700/15 blur-3xl"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-yellow-300/45 to-transparent" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         {/* CTA band */}
@@ -42,7 +39,7 @@ export default function Footer() {
           </div>
           <a
             href="#contact"
-            className="group btn-shine inline-flex shrink-0 items-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-slate-950 shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal-200"
+            className="group btn-shine inline-flex shrink-0 items-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm font-bold text-slate-950 shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-yellow-200"
           >
             Schedule a Consultation
             <svg
@@ -76,7 +73,7 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400 transition-all duration-200 hover:border-teal-400/40 hover:bg-teal-500/10 hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400 transition-all duration-200 hover:border-yellow-300/40 hover:bg-white/10 hover:text-white"
                 >
                   {SOCIAL_ICONS[social.icon]}
                 </a>
@@ -110,7 +107,7 @@ export default function Footer() {
                       href={link.href}
                       className="group inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors duration-200 hover:text-white"
                     >
-                      <span className="h-px w-0 bg-teal-400 transition-all duration-200 group-hover:w-3" />
+                      <span className="h-px w-0 bg-yellow-300 transition-all duration-200 group-hover:w-3" />
                       {link.label}
                     </a>
                   </li>
@@ -125,7 +122,7 @@ export default function Footer() {
           <p>Copyright {COMPANY.copyrightYear} {COMPANY.legalName}. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 animate-pulse-soft rounded-full bg-emerald-400" />
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
               All systems operational
             </span>
             <span className="font-mono">Yerevan · GMT+4</span>

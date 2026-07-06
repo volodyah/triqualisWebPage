@@ -34,7 +34,7 @@ export const HERO = {
   headlineTop: "Engineering",
   headlineMiddle: "Your Success",
   headlineBottom: "Story.",
-  lede: "triqualis is a senior-only software engineering firm operating at both ends of the stack — from register-level C/C++ firmware and performance-critical desktop systems to globally distributed cloud, web, and SaaS architectures.",
+  lede: "triqualis is a senior-led software engineering firm operating at both ends of the stack — from register-level C/C++ firmware and performance-critical desktop systems to globally distributed cloud, web, and SaaS architectures.",
   sublede: "Enterprises across Europe and North America engage us when the problem is too low-level for a typical web shop and too fast-moving for a traditional systems house. We close that gap with one accountable team: rigorous systems engineering discipline, delivered at modern product velocity.",
   primaryCta: { label: "Schedule a Consultation", href: "#contact" },
   secondaryCta: { label: "Explore Our Capabilities", href: "#services" },
@@ -64,34 +64,34 @@ export type Stat = {
 
 export const STATS: Stat[] = [
   {
-    value: "25+",
-    label: "Senior Engineers On-Board",
-    detail: "Median 9 years of production experience. No junior benches, no bait-and-switch staffing.",
+    value: "2",
+    label: "Ways to Engage",
+    detail: "Embed our developers directly into your team, or hand triqualis the entire project end-to-end. Both models, one standard of quality.",
   },
   {
-    value: "60+",
-    label: "Projects Delivered",
-    detail: "From RTOS firmware and QT desktop suites to multi-tenant SaaS platforms in production today.",
+    value: "Any Role",
+    label: "Positions We Staff",
+    detail: "C/C++, QT, web frontend, backend, DevOps, Odoo — tell us the position and we quickly source a vetted engineer to fill it.",
   },
   {
-    value: "98%",
-    label: "Sprint Commitments Met",
-    detail: "Measured across every active engagement since founding. Deadlines are engineering constraints, not aspirations.",
+    value: "E2E",
+    label: "Full Project Delivery",
+    detail: "Discovery, architecture, implementation, and production operation — one accountable partner across the whole lifecycle.",
   },
   {
-    value: "3.4M+",
-    label: "Lines of C/C++ Maintained",
-    detail: "Actively owned, tested, and evolved across embedded, desktop, and high-throughput backend codebases.",
+    value: "2024",
+    label: "Founded in Yerevan",
+    detail: "Built on Armenia's deep mathematical and engineering tradition — deliberately lean, senior-minded, and quality-first.",
   },
   {
-    value: "99.99%",
-    label: "Runtime Availability",
-    detail: "Across the cloud platforms and services our teams design, harden, and operate for clients.",
+    value: "C++ → Cloud",
+    label: "Stack Coverage",
+    detail: "From register-level embedded and desktop systems to modern web, SaaS, and cloud platforms — both ends of the stack, one team.",
   },
   {
-    value: "< 2 wks",
-    label: "Pod Assembly Time",
-    detail: "From signed engagement to a fully briefed, dedicated engineering pod writing production code.",
+    value: "1 day",
+    label: "Response Time",
+    detail: "Every inquiry is reviewed by a senior engineer and answered within one business day — with an honest read on fit.",
   },
 ];
 
@@ -123,7 +123,7 @@ export const VALUES: CoreValue[] = [
     headline: "Hyper-efficient cost structures. Zero compromise on rigor.",
     body: "Operating from Armenia's elite engineering ecosystem lets us field genuinely senior teams at a fraction of Western European or North American rates — without the quality erosion typical of offshore staffing. Fixed, transparent pricing models, no pyramid of billable juniors, and an efficiency discipline that treats every engineering hour as your capital, because it is.",
     points: [
-      "Senior-only teams — you never fund on-the-job training",
+      "Senior-led teams — no unsupervised juniors, ever",
       "Transparent, predictable engagement pricing",
       "Architecture reviews that prevent expensive rewrites later",
     ],
@@ -149,7 +149,7 @@ export const ABOUT = {
   paragraphs: [
     "triqualis was founded in 2024 in Yerevan with a specific thesis: the global market is saturated with web agencies and staffed to the ceiling with generalists, yet critically short of teams who can move fluently between low-level systems programming and modern cloud product engineering. We built the firm to occupy exactly that intersection.",
     "Armenia was not a cost decision — it was a talent decision. The country carries one of the deepest mathematical and engineering traditions in the region, a legacy of Soviet-era scientific institutes that made Yerevan a computing research center decades before 'tech hub' was a phrase. Today that lineage feeds a thriving ecosystem of engineers who grew up on algorithms, compilers, and hard systems problems — precisely the profile that thrives on the work we take.",
-    "The result is a firm that is small by design and senior by policy. Every triqualis engineer is expected to reason from first principles, communicate directly with client stakeholders, and hold the same bar whether the artifact is a lock-free queue in C++ or a multi-region deployment pipeline.",
+    "The result is a firm that is small by design and senior-led by policy. Every triqualis engineer is expected to reason from first principles, communicate directly with client stakeholders, and hold the same bar whether the artifact is a lock-free queue in C++ or a multi-region deployment pipeline.",
   ],
   pillars: [
     {
@@ -167,7 +167,7 @@ export const ABOUT = {
     { year: "2024", event: "Founded in Yerevan by senior systems and platform engineers." },
     { year: "2024", event: "First enterprise SaaS engagement enters production within one quarter." },
     { year: "2025", event: "Deep engineering partnership with matelso; embedded & QT practice formalized." },
-    { year: "2026", event: "25+ senior engineers across systems, platform, and enterprise practices." },
+    { year: "2026", event: "Flexible engagement network spanning systems, platform, and enterprise practices." },
   ],
 } as const;
 
@@ -179,7 +179,7 @@ export type Service = {
   tagline: string;
   description: string;
   deliverables: string[];
-  accent: "teal" | "emerald" | "slate";
+  accent: "teal" | "yellow" | "slate";
 };
 
 export const SERVICES: Service[] = [
@@ -209,7 +209,7 @@ export const SERVICES: Service[] = [
       "Performance engineering: profiling, SIMD, lock-free concurrency",
       "Legacy C/C++ modernization & long-term stewardship",
     ],
-    accent: "emerald",
+    accent: "yellow",
   },
   {
     id: "team-augmentation",
@@ -256,8 +256,8 @@ export const PROCESS: ProcessStep[] = [
     step: "03",
     title: "Agile Delivery",
     duration: "Ongoing sprints",
-    description: "Two-week sprints with working software demonstrated at every boundary. Risk-first sequencing pulls the hardest problems forward. Continuous integration keeps main releasable; code review, static analysis, and automated test gates keep quality non-negotiable. You see burn-down, velocity, and defect metrics — the same dashboards we see.",
-    outcomes: ["Weekly demos of working software", "Transparent velocity & quality metrics", "Release-ready main branch, always"],
+    description: "A delivery rhythm tailored to your project — together we agree the cadence that fits, whether that's classic two-week sprints, weekly increments, or continuous flow. Whatever the rhythm, working software is demonstrated at every boundary, risk-first sequencing pulls the hardest problems forward, and code review, static analysis, and automated test gates keep quality non-negotiable. You see the same dashboards we see.",
+    outcomes: ["Cadence agreed together, per project", "Regular demos of working software", "Release-ready main branch, always"],
   },
   {
     step: "04",
@@ -353,14 +353,15 @@ export const TECH_STACK: TechCategory[] = [
 /* ---- Case Study / Proven Capability -------------------------------------- */
 
 export const CASE_STUDY = {
-  eyebrow: "Proven Capability",
+  eyebrow: "Strategic Partnership",
   client: "matelso",
+  clientWebsite: "https://matelso.com",
   clientDescriptor: "High-demand European call-tracking & lead-management SaaS",
-  title: "Deep engineering inside a high-demand SaaS platform",
+  title: "Embedded inside matelso — our biggest engineering partnership.",
   narrative: [
-    "matelso operates in a segment where downtime is directly measurable in lost customer revenue: real-time call tracking and lead management for marketing-driven businesses across Europe. When platform demands outgrew available engineering capacity, triqualis embedded a dedicated pod directly into their delivery organization.",
-    "Our engineers took ownership of performance-sensitive services and integration surfaces — working inside matelso's architecture, coding standards, and release cadence from the first sprint. The engagement demanded exactly the dual competency triqualis was built for: low-level runtime discipline to keep hot paths deterministic under load, and modern SaaS engineering to ship features at the pace their market requires.",
-    "The result: seamless integration with zero disruption to running operations, sustained release velocity through periods of rapid platform growth, and runtime behavior their operations team describes in one word — bulletproof.",
+    "matelso is triqualis' biggest and closest partner: a high-demand European SaaS platform for real-time call tracking and lead management, operating in a market where downtime is directly measurable in lost customer revenue. It is also the clearest proof of how we work.",
+    "Our developers aren't an external vendor throwing code over a wall — they work alongside matelso's own engineers as full members of the product teams: the same standups, the same sprint boards, the same codebase and quality bar. That depth of integration demands exactly the dual competency triqualis was built for — low-level runtime discipline to keep performance-critical paths deterministic under load, and modern SaaS engineering to ship features at the pace the market requires.",
+    "The result of working this way: seamless integration with zero disruption to running operations, sustained release velocity through rapid platform growth, and runtime behavior the operations team describes in one word — bulletproof.",
   ],
   highlights: [
     { metric: "Seamless", label: "Integration into existing architecture, standards & release trains" },

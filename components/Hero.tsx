@@ -2,46 +2,38 @@ import { HERO, HERO_TICKER } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-[72px]">
-      {/* Layered background: grid + soft gradient blooms */}
+    <section id="top" className="relative overflow-hidden bg-white pt-[72px]">
       <div className="bg-grid-slate mask-radial-fade absolute inset-0" aria-hidden="true" />
-      <div
-        className="animate-blob absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-gradient-to-br from-teal-300/50 via-white/0 to-teal-200/50 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="animate-blob-slow absolute top-40 -right-32 h-80 w-80 rounded-full bg-teal-200/40 blur-3xl"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-[#f6f8fb] to-white" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-5 pt-16 pb-10 sm:px-8 sm:pt-24 lg:pt-28">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12">
           {/* ---- Copy column ---- */}
           <div className="animate-fade-up">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white/80 py-1.5 pr-4 pl-1.5 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur">
-              <span className="rounded-full bg-gradient-to-r from-teal-600 to-teal-500 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white uppercase">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white py-1.5 pr-4 pl-1.5 text-xs font-semibold text-slate-700 shadow-sm shadow-slate-900/5">
+              <span className="rounded-full bg-slate-950 px-2.5 py-1 text-[10px] font-bold tracking-wider text-yellow-200 uppercase">
                 Est. 2024
               </span>
               {HERO.eyebrow}
             </div>
 
-            <h1 className="mt-7 text-5xl leading-[1.02] font-extrabold tracking-tight sm:text-6xl lg:text-[4.6rem]">
+            <h1 className="mt-7 max-w-3xl text-5xl leading-[1.18] font-semibold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem]">
               <span className="text-gradient-slate block">{HERO.headlineTop}</span>
               <span className="text-gradient-teal block">{HERO.headlineMiddle}</span>
               <span className="text-gradient-slate block">{HERO.headlineBottom}</span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-relaxed font-medium text-slate-700">
+            <p className="mt-7 max-w-2xl text-lg leading-8 font-medium text-slate-700">
               {HERO.lede}
             </p>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-500">
+            <p className="mt-4 max-w-2xl text-base leading-8 text-slate-500">
               {HERO.sublede}
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href={HERO.primaryCta.href}
-                className="group btn-shine inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-teal-800 to-teal-600 px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-teal-700/25 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-teal-600/30"
+                className="group btn-shine inline-flex items-center gap-2.5 rounded-xl bg-slate-950 px-7 py-3.5 text-sm font-semibold text-white shadow-xl shadow-slate-900/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal-800"
               >
                 {HERO.primaryCta.label}
                 <svg
@@ -59,23 +51,30 @@ export default function Hero() {
               </a>
               <a
                 href={HERO.secondaryCta.href}
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white/70 px-7 py-3.5 text-sm font-semibold text-slate-800 backdrop-blur transition-all duration-200 hover:border-teal-300 hover:bg-teal-50/60 hover:text-teal-800"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-7 py-3.5 text-sm font-semibold text-slate-800 transition-all duration-200 hover:border-teal-600 hover:text-teal-800"
               >
                 {HERO.secondaryCta.label}
               </a>
             </div>
 
             <div className="mt-10 flex items-center gap-3 text-sm text-slate-500">
-              <span className="flex -space-x-1.5" aria-hidden="true">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-teal-600 font-mono text-[9px] font-bold text-white ring-2 ring-white">
-                  C++
-                </span>
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-teal-500 font-mono text-[9px] font-bold text-white ring-2 ring-white">
-                  TS
-                </span>
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-800 font-mono text-[9px] font-bold text-white ring-2 ring-white">
-                  QT
-                </span>
+              <span className="flex -space-x-1.5">
+                {[
+                  { short: "C++", full: "C / C++ Systems", chip: "bg-teal-700 text-white" },
+                  { short: "TS", full: "TypeScript & Web", chip: "bg-yellow-400 text-slate-950" },
+                  { short: "QT", full: "QT / QML Interfaces", chip: "bg-slate-800 text-white" },
+                ].map((tech) => (
+                  <span key={tech.short} className="group relative hover:z-10">
+                    <span
+                      className={`flex h-7 w-7 cursor-default items-center justify-center rounded-full font-mono text-[9px] font-bold ring-2 ring-white transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-110 ${tech.chip}`}
+                    >
+                      {tech.short}
+                    </span>
+                    <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 rounded-lg bg-slate-950 px-2.5 py-1 text-[11px] font-semibold whitespace-nowrap text-white opacity-0 shadow-lg transition-all duration-200 group-hover:-translate-y-0.5 group-hover:opacity-100">
+                      {tech.full}
+                    </span>
+                  </span>
+                ))}
               </span>
               {HERO.trustLine}
             </div>
@@ -84,20 +83,20 @@ export default function Hero() {
           {/* ---- Bento showcase column ---- */}
           <div className="animate-fade-in relative">
             {/* Floating badges */}
-            <div className="animate-float absolute -top-5 left-3 z-10 hidden items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-xl shadow-slate-900/8 sm:flex">
+            <div className="absolute -top-5 left-3 z-10 hidden items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-xl shadow-slate-900/8 sm:flex">
               <span className="h-2 w-2 rounded-full bg-emerald-500" />
               <span className="text-xs font-semibold text-slate-800">
-                99.99% runtime availability
+                Developers for any position
               </span>
             </div>
-            <div className="animate-float-delayed absolute -right-2 -bottom-5 z-10 hidden items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-xl shadow-slate-900/8 sm:flex">
-              <span className="font-mono text-xs font-bold text-teal-700">&lt;2wks</span>
-              <span className="text-xs font-semibold text-slate-800">pod assembly</span>
+            <div className="absolute -right-2 -bottom-5 z-10 hidden items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-xl shadow-slate-900/8 sm:flex">
+              <span className="font-mono text-xs font-bold text-teal-700">1 day</span>
+              <span className="text-xs font-semibold text-slate-800">inquiry response</span>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               {/* Terminal card — spans full width */}
-              <div className="card-shine col-span-2 rounded-2xl bg-slate-950 p-5 shadow-2xl shadow-slate-900/25">
+              <div className="card-shine col-span-2 rounded-2xl bg-slate-950 p-5 shadow-2xl shadow-slate-900/20">
                 <div className="flex items-center gap-1.5 pb-4">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
@@ -127,8 +126,8 @@ export default function Hero() {
               </div>
 
               {/* Systems depth card */}
-              <div className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl hover:shadow-teal-900/10">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-700">
+              <div className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-lg hover:shadow-slate-900/10">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-teal-800">
                   <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                     <rect x="4" y="4" width="16" height="16" rx="2" />
                     <rect x="9" y="9" width="6" height="6" rx="1" />
@@ -142,8 +141,8 @@ export default function Hero() {
               </div>
 
               {/* Cloud velocity card */}
-              <div className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-xl hover:shadow-teal-900/10">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-teal-700">
+              <div className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-lg hover:shadow-slate-900/10">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-50 text-slate-900">
                   <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                     <path d="M17.5 19a4.5 4.5 0 100-9 6 6 0 00-11.5 1.5A4 4 0 006 19h11.5z" />
                     <path d="M12 12v5M9.5 14.5L12 12l2.5 2.5" />
@@ -156,14 +155,14 @@ export default function Hero() {
               </div>
 
               {/* Metric strip */}
-              <div className="col-span-2 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl border border-slate-200 bg-white/90 shadow-lg shadow-slate-900/5 backdrop-blur">
+              <div className="col-span-2 grid grid-cols-3 divide-x divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-sm shadow-slate-900/5">
                 {[
-                  { value: "25+", label: "Sr. Engineers" },
-                  { value: "60+", label: "Projects Live" },
-                  { value: "98%", label: "Sprints On Time" },
+                  { value: "E2E", label: "Project Delivery" },
+                  { value: "Any Role", label: "Team Augmentation" },
+                  { value: "C++→Cloud", label: "Stack Coverage" },
                 ].map((stat) => (
                   <div key={stat.label} className="px-4 py-4 text-center">
-                    <p className="text-xl font-extrabold tracking-tight text-teal-700">
+                    <p className="text-xl font-bold tracking-tight text-teal-800">
                       {stat.value}
                     </p>
                     <p className="mt-0.5 text-[11px] font-medium tracking-wide text-slate-500">

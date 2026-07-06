@@ -20,7 +20,7 @@ export default function Header() {
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "border-b border-slate-200/80 bg-white/80 shadow-[0_8px_30px_rgb(15_23_42_/_0.06)] backdrop-blur-xl"
-          : "border-b border-transparent bg-white/40 backdrop-blur-md"
+          : "border-b border-transparent bg-white/70 backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -32,7 +32,7 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className="rounded-lg px-3.5 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-slate-100 hover:text-slate-900"
+              className="rounded-lg px-3.5 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-slate-100 hover:text-slate-950"
             >
               {link.label}
             </a>
@@ -42,7 +42,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="group btn-shine hidden items-center gap-2 rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition-all duration-200 hover:bg-teal-700 hover:shadow-teal-700/25 sm:inline-flex"
+            className="group btn-shine hidden items-center gap-2 rounded-xl bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition-all duration-200 hover:bg-teal-800 sm:inline-flex"
           >
             Schedule a Consultation
             <svg

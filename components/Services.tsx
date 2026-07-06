@@ -7,22 +7,22 @@ const ACCENTS: Record<
   { chip: string; icon: string; check: string; hover: string }
 > = {
   teal: {
-    chip: "bg-teal-50 text-teal-700 border-teal-100",
-    icon: "bg-teal-600 shadow-teal-600/30",
-    check: "text-teal-600",
-    hover: "hover:border-teal-200 hover:shadow-teal-900/12",
+    chip: "bg-teal-50 text-teal-800 border-teal-100",
+    icon: "bg-teal-700 text-white shadow-teal-700/20",
+    check: "text-teal-700",
+    hover: "hover:border-teal-200",
   },
-  emerald: {
-    chip: "bg-emerald-50 text-emerald-700 border-emerald-100",
-    icon: "bg-emerald-600 shadow-emerald-600/30",
-    check: "text-emerald-600",
-    hover: "hover:border-emerald-200 hover:shadow-emerald-900/12",
+  yellow: {
+    chip: "bg-yellow-50 text-slate-800 border-yellow-100",
+    icon: "bg-yellow-400 text-slate-950 shadow-yellow-400/20",
+    check: "text-teal-700",
+    hover: "hover:border-yellow-200",
   },
   slate: {
     chip: "bg-slate-100 text-slate-700 border-slate-200",
-    icon: "bg-slate-800 shadow-slate-800/30",
+    icon: "bg-slate-900 text-white shadow-slate-900/20",
     check: "text-slate-700",
-    hover: "hover:border-slate-300 hover:shadow-slate-900/12",
+    hover: "hover:border-slate-300",
   },
 };
 
@@ -32,7 +32,7 @@ const ICONS: Record<Service["accent"], React.ReactNode> = {
       <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
-  emerald: (
+  yellow: (
     <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
       <rect x="5" y="5" width="14" height="14" rx="2" />
       <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3M9.5 9.5h5v5h-5z" strokeLinecap="round" />
@@ -48,7 +48,7 @@ const ICONS: Record<Service["accent"], React.ReactNode> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-[#F8F9FA] py-24 sm:py-28">
+    <section id="services" className="section-surface relative py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Services & Expertise"
@@ -62,10 +62,10 @@ export default function Services() {
             return (
               <SpotlightCard
                 key={service.id}
-                className={`flex flex-col rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_20px_50px_-20px_rgb(15_23_42_/_0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_70px_-20px_rgb(15_23_42_/_0.22)] ${accent.hover}`}
+                className={`premium-shadow flex flex-col rounded-2xl border premium-border bg-white p-8 transition-all duration-300 hover:-translate-y-1 ${accent.hover}`}
               >
                 <div
-                  className={`flex h-13 w-13 items-center justify-center rounded-2xl text-white shadow-lg ${accent.icon} h-[52px] w-[52px] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
+                  className={`flex h-[52px] w-[52px] items-center justify-center rounded-2xl shadow-lg ${accent.icon} transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
                 >
                   {ICONS[service.accent]}
                 </div>
@@ -76,7 +76,7 @@ export default function Services() {
                   {service.tagline}
                 </span>
 
-                <h3 className="mt-4 text-xl font-bold tracking-tight text-slate-900">
+                <h3 className="mt-4 text-xl font-semibold tracking-tight text-slate-900">
                   {service.title}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">

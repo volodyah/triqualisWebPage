@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Shadows_Into_Light } from "next/font/google";
+import { Inter, JetBrains_Mono, Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,11 +15,11 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-// Handwritten face used only for the brand wordmark, matching the triqualis logo.
-const logoScript = Shadows_Into_Light({
+// Clean geometric face used only for the brand wordmark.
+const logoFace = Manrope({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-logo-script",
+  weight: ["600", "700"],
+  variable: "--font-logo-face",
   display: "swap",
 });
 
@@ -49,9 +50,28 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${logoScript.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${logoFace.variable}`}
     >
-      <body className="bg-white font-sans text-slate-900">{children}</body>
+      <body className="bg-white font-sans text-slate-900">
+        {children}
+        {/* matelso Web Mediation Platform — communication bubbles */}
+        <Script id="matelso-wmp" strategy="afterInteractive">
+          {`(function (w, d, s, l, o) {
+            w[l] = w[l] || [];
+            w[l].push({ cmd: 'start', o: o });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s);
+            j.async = true;
+            j.src = 'https://cdn.platform.matelso.com/wmp.js?b=' + Date.now();
+            f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'wmpDl', {
+            ownerId: '169cfafb-13aa-49a8-9dcd-c342eda03358',
+            pluginId: 'bfe571ce-e326-4af5-8c4b-0e6d43864959',
+            technical: false,
+            marketing: false
+          });`}
+        </Script>
+      </body>
     </html>
   );
 }

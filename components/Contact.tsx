@@ -28,7 +28,7 @@ const CHANNEL_ICONS: Record<"location" | "email" | "phone", React.ReactNode> = {
 };
 
 const inputClasses =
-  "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm transition-all duration-200 focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 focus:outline-none";
+  "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm shadow-slate-900/5 transition-all duration-200 focus:border-teal-600 focus:ring-4 focus:ring-teal-600/10 focus:outline-none";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -68,9 +68,9 @@ export default function Contact() {
             {CONTACT.channels.map((channel) => (
               <div
                 key={channel.label}
-                className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_15px_40px_-20px_rgb(15_23_42_/_0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-[0_20px_50px_-20px_rgb(0_128_128_/_0.3)]"
+                className="group flex items-start gap-4 rounded-2xl border premium-border bg-white p-6 shadow-sm shadow-slate-900/5 transition-all duration-300 hover:-translate-y-0.5 hover:border-teal-200"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-700 text-white shadow-lg shadow-teal-700/25 transition-transform duration-300 group-hover:scale-110">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-white shadow-lg shadow-slate-900/15 transition-transform duration-300 group-hover:scale-105">
                   {CHANNEL_ICONS[channel.icon]}
                 </span>
                 <div>
@@ -84,12 +84,12 @@ export default function Contact() {
             ))}
 
             {/* Response-time promise card */}
-            <div className="card-shine relative overflow-hidden rounded-2xl bg-slate-950 p-6 shadow-xl shadow-slate-900/25">
+            <div className="card-shine relative overflow-hidden rounded-2xl bg-[#0b1120] p-6 shadow-xl shadow-slate-900/20">
               <div className="bg-grid-light absolute inset-0 opacity-50" aria-hidden="true" />
               <div className="relative">
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 animate-pulse-soft rounded-full bg-emerald-400" />
-                  <p className="font-mono text-xs font-bold tracking-wider text-teal-300 uppercase">
+                  <span className="h-2 w-2 rounded-full bg-yellow-300" />
+                  <p className="font-mono text-xs font-bold tracking-wider text-yellow-200 uppercase">
                     Response SLA
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export default function Contact() {
           </div>
 
           {/* ---- Right: contact form ---- */}
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_30px_70px_-30px_rgb(15_23_42_/_0.25)] sm:p-10">
+          <div className="premium-shadow rounded-2xl border premium-border bg-white p-8 sm:p-10">
             {submitted ? (
               <div className="flex h-full min-h-[420px] flex-col items-center justify-center text-center">
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50">
@@ -125,7 +125,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
-                  className="mt-8 rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-teal-300 hover:text-teal-700"
+                  className="mt-8 rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-teal-500 hover:text-teal-800"
                 >
                   Send another inquiry
                 </button>
@@ -199,7 +199,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="group btn-shine mt-1 inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-teal-800 to-teal-600 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-teal-700/25 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-teal-600/30"
+                  className="group btn-shine mt-1 inline-flex items-center justify-center gap-2.5 rounded-xl bg-slate-950 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-slate-900/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal-800"
                 >
                   Submit Project Inquiry
                   <svg

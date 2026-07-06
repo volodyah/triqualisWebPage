@@ -7,7 +7,7 @@ type SpotlightCardProps = {
   className?: string;
 };
 
-/** Card wrapper with a teal glow that follows the cursor. */
+/** Card wrapper with a subtle highlight that follows the cursor. */
 export default function SpotlightCard({ children, className = "" }: SpotlightCardProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -26,7 +26,7 @@ export default function SpotlightCard({ children, className = "" }: SpotlightCar
         className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(340px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(0 128 128 / 0.1), transparent 65%)",
+            "radial-gradient(340px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgb(15 118 110 / 0.07), transparent 65%)",
         }}
       />
       {children}

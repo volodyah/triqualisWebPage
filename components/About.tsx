@@ -39,8 +39,8 @@ export default function About() {
                         aria-hidden="true"
                       />
                     )}
-                    <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-teal-200 bg-white">
-                      <span className="h-2 w-2 rounded-full bg-teal-600" />
+                    <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-slate-200 bg-white">
+                      <span className="h-2 w-2 rounded-full bg-yellow-400" />
                     </span>
                     <div className="pt-0.5">
                       <span className="font-mono text-xs font-bold text-teal-700">
@@ -58,7 +58,7 @@ export default function About() {
 
           {/* Pillars column */}
           <div className="flex flex-col gap-6 lg:pt-24">
-            <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 shadow-sm">
+            <div className="rounded-2xl border premium-border bg-[#f6f8fb] p-6 shadow-sm">
               <p className="text-sm leading-relaxed text-slate-600">
                 <span className="font-bold text-slate-900">Why Armenia?</span> A century-deep
                 mathematical tradition, elite engineering universities, and one of the
@@ -71,10 +71,10 @@ export default function About() {
             {ABOUT.pillars.map((pillar, i) => (
               <article
                 key={pillar.title}
-                className={`card-shine group relative overflow-hidden rounded-3xl p-8 shadow-xl transition-transform duration-300 hover:-translate-y-1 ${
+                className={`card-shine group relative overflow-hidden rounded-2xl p-8 shadow-xl transition-transform duration-300 hover:-translate-y-1 ${
                   i === 0
-                    ? "bg-slate-950 text-white shadow-slate-900/25"
-                    : "border border-slate-200 bg-white shadow-slate-900/8"
+                    ? "bg-[#0b1120] text-white shadow-slate-900/20"
+                    : "border premium-border bg-white shadow-slate-900/8"
                 }`}
               >
                 {i === 0 && (
@@ -83,13 +83,13 @@ export default function About() {
                 <div className="relative">
                   <span
                     className={`inline-block rounded-lg px-3 py-1 font-mono text-[11px] font-bold tracking-wider uppercase ${
-                      i === 0 ? "bg-teal-400/15 text-teal-300" : "bg-teal-50 text-teal-700"
+                      i === 0 ? "bg-white/10 text-yellow-200" : "bg-teal-50 text-teal-800"
                     }`}
                   >
                     Pillar {i + 1} · {pillar.subtitle}
                   </span>
                   <h3
-                    className={`mt-4 text-xl font-bold tracking-tight ${
+                    className={`mt-4 text-xl font-semibold tracking-tight ${
                       i === 0 ? "text-white" : "text-slate-900"
                     }`}
                   >

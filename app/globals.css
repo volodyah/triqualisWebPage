@@ -5,10 +5,15 @@
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --font-logo: var(--font-logo-script), "Segoe Print", "Comic Sans MS", cursive;
+  --font-logo: var(--font-logo-face), ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand palette: charcoal text on pure white, per triqualis brand spec */
+  /* Brand palette: precise neutrals with restrained teal and signal yellow */
   --color-slate-900: #1a202c;
+  --color-brand-ink: #111827;
+  --color-brand-muted: #64748b;
+  --color-brand-surface: #f6f8fb;
+  --color-brand-teal: #0f766e;
+  --color-brand-yellow: #facc15;
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-fade-in: fade-in 0.9s ease-out both;
@@ -117,22 +122,22 @@ body {
 
 /* Subtle blueprint-style grid on white */
 .bg-grid-slate {
-  background-image: linear-gradient(to right, rgb(26 32 44 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(26 32 44 / 0.045) 1px, transparent 1px);
-  background-size: 56px 56px;
+  background-image: linear-gradient(to right, rgb(15 23 42 / 0.032) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(15 23 42 / 0.032) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 /* Fine grid for dark sections */
 .bg-grid-light {
-  background-image: linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-image: linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
 /* Dotted matrix */
 .bg-dots-slate {
-  background-image: radial-gradient(rgb(26 32 44 / 0.09) 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-image: radial-gradient(rgb(15 23 42 / 0.055) 1px, transparent 1px);
+  background-size: 26px 26px;
 }
 
 /* Radial fade mask so grids melt into the page */
@@ -146,18 +151,18 @@ body {
   mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 }
 
-/* Animated headline gradient — deep teal panning to bright teal */
+/* Animated headline gradient — deep teal panning into the brand yellow */
 .text-gradient-teal {
-  background: linear-gradient(105deg, #134e4a 0%, #008080 40%, #14b8a6 75%, #5eead4 100%);
-  background-size: 220% 220%;
-  animation: gradient-pan 7s ease-in-out infinite;
+  background: linear-gradient(105deg, #0f766e 0%, #0d9488 46%, #facc15 100%);
+  background-size: 180% 180%;
+  animation: gradient-pan 10s ease-in-out infinite;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .text-gradient-slate {
-  background: linear-gradient(180deg, #1a202c 30%, #475569 100%);
+  background: linear-gradient(180deg, #111827 25%, #334155 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -174,7 +179,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(140deg, rgb(0 128 128 / 0.4), rgb(148 163 184 / 0.12) 40%, rgb(45 212 191 / 0.35));
+  background: linear-gradient(140deg, rgb(15 118 110 / 0.28), rgb(148 163 184 / 0.12) 45%, rgb(250 204 21 / 0.24));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -196,6 +201,18 @@ body {
   transform: translateX(-160%);
   transition: transform 0.65s ease;
   pointer-events: none;
+}
+
+.section-surface {
+  background: #f6f8fb;
+}
+
+.premium-shadow {
+  box-shadow: 0 22px 60px -36px rgb(15 23 42 / 0.38);
+}
+
+.premium-border {
+  border-color: rgb(203 213 225 / 0.78);
 }
 
 .btn-shine:hover::after {

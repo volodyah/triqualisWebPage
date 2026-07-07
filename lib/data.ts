@@ -398,14 +398,12 @@ export const CONTACT = {
     },
   ],
   projectTypes: [
-    "Custom Software Engineering",
-    "Embedded / C & C++ Systems",
-    "QT / QML Interface Development",
-    "Enterprise SaaS Platform",
-    "Team Augmentation / Dedicated Pod",
-    "Odoo / Enterprise Solutions",
-    "Technical Consulting & Audit",
-    "Other / Not Sure Yet",
+    "Hire Developers — extend my team",
+    "End-to-End Project Delivery",
+    "Web, Cloud & SaaS Development",
+    "Embedded & C/C++ Systems",
+    "Consulting or Architecture Review",
+    "Something Else / Not Sure Yet",
   ],
 } as const;
 

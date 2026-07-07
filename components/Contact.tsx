@@ -4,6 +4,29 @@ import { useState } from "react";
 import { COMPANY, CONTACT } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 
+/* matelso Web Mediation Platform SDK (loaded globally via app/layout.tsx).
+ * The main plugin renders the communication bubbles; the contact form lives
+ * on a separate plugin, loaded on demand via usePlugin(). Its conversation
+ * point expects a flat payload keyed by field name:
+ * { Email, FirstName, LastName, Phone, Message } — Email & Phone required. */
+const FORM_PLUGIN_ID = "bd66883b-8511-4452-9dd0-ce2e36975fa7";
+
+type WmpFormApi = {
+  form: {
+    send: (payload: Record<string, string>) => Promise<unknown>;
+  };
+};
+
+declare global {
+  interface Window {
+    wmpapi?: {
+      v1: WmpFormApi & {
+        usePlugin: (pluginId: string) => Promise<WmpFormApi>;
+      };
+    };
+  }
+}
+
 const CHANNEL_ICONS: Record<"location" | "email" | "phone", React.ReactNode> = {
   location: (
     <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
@@ -30,24 +53,43 @@ const CHANNEL_ICONS: Record<"location" | "email" | "phone", React.ReactNode> = {
 const inputClasses =
   "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm shadow-slate-900/5 transition-all duration-200 focus:border-teal-600 focus:ring-4 focus:ring-teal-600/10 focus:outline-none";
 
-export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+type Status = "idle" | "sending" | "success" | "error";
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+export default function Contact() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (status === "sending") return;
+
     const data = new FormData(event.currentTarget);
-    const subject = `Project Inquiry — ${data.get("projectType")}`;
-    const body = [
-      `Full name: ${data.get("fullName")}`,
-      `Corporate email: ${data.get("email")}`,
-      `Project type: ${data.get("projectType")}`,
-      "",
-      "Project scope:",
-      String(data.get("scope")),
-    ].join("\n");
-    // Static site, no backend: hand the inquiry to the visitor's mail client.
-    window.location.href = `mailto:${COMPANY.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+    const payload = {
+      FirstName: String(data.get("firstName") ?? "").trim(),
+      LastName: String(data.get("lastName") ?? "").trim(),
+      Email: String(data.get("email") ?? "").trim(),
+      Phone: String(data.get("phone") ?? "").trim(),
+      Message: `Project type: ${data.get("projectType")}\n\n${String(data.get("scope") ?? "").trim()}`,
+    };
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      if (!window.wmpapi?.v1) {
+        throw new Error("Contact service is not available.");
+      }
+      const formPlugin = await window.wmpapi.v1.usePlugin(FORM_PLUGIN_ID);
+      await formPlugin.form.send(payload);
+      setStatus("success");
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error && error.message === "Invalid form data"
+          ? "Please double-check your email address and phone number — one of them doesn't look valid."
+          : "The inquiry couldn't be sent right now.",
+      );
+    }
   }
 
   return (
@@ -106,26 +148,23 @@ export default function Contact() {
 
           {/* ---- Right: contact form ---- */}
           <div className="premium-shadow rounded-2xl border premium-border bg-white p-8 sm:p-10">
-            {submitted ? (
+            {status === "success" ? (
               <div className="flex h-full min-h-[420px] flex-col items-center justify-center text-center">
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50">
                   <svg className="h-8 w-8 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                     <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-                <h3 className="mt-6 text-2xl font-bold text-slate-900">Almost there.</h3>
+                <h3 className="mt-6 text-2xl font-bold text-slate-900">Inquiry sent.</h3>
                 <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">
-                  Your email client just opened with the inquiry pre-filled — hit{" "}
-                  <span className="font-semibold text-slate-900">Send</span> and it lands directly
-                  with a senior triqualis engineer, who will respond within one business day. If
-                  nothing opened, email us at{" "}
-                  <span className="font-semibold text-slate-900">{COMPANY.email}</span> or call{" "}
+                  Your inquiry has been delivered — a senior triqualis engineer will review it and
+                  respond within one business day. For urgent matters, call us directly at{" "}
                   <span className="font-semibold text-slate-900">{COMPANY.phone}</span>.
                 </p>
                 <button
                   type="button"
-                  onClick={() => setSubmitted(false)}
-                  className="mt-8 rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-teal-500 hover:text-teal-800"
+                  onClick={() => setStatus("idle")}
+                  className="mt-8 rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-teal-300 hover:text-teal-700"
                 >
                   Send another inquiry
                 </button>
@@ -134,18 +173,34 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="fullName" className="mb-1.5 block text-sm font-semibold text-slate-800">
-                      Full Name
+                    <label htmlFor="firstName" className="mb-1.5 block text-sm font-semibold text-slate-800">
+                      First Name
                     </label>
                     <input
-                      id="fullName"
-                      name="fullName"
+                      id="firstName"
+                      name="firstName"
                       type="text"
-                      required
-                      placeholder="Jane Schmidt"
+                      autoComplete="given-name"
+                      placeholder="Jane"
                       className={inputClasses}
                     />
                   </div>
+                  <div>
+                    <label htmlFor="lastName" className="mb-1.5 block text-sm font-semibold text-slate-800">
+                      Last Name
+                    </label>
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      autoComplete="family-name"
+                      placeholder="Schmidt"
+                      className={inputClasses}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-slate-800">
                       Corporate Email
@@ -155,7 +210,22 @@ export default function Contact() {
                       name="email"
                       type="email"
                       required
+                      autoComplete="email"
                       placeholder="jane@company.com"
+                      className={inputClasses}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="mb-1.5 block text-sm font-semibold text-slate-800">
+                      Phone
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      autoComplete="tel"
+                      placeholder="+49 151 1234567"
                       className={inputClasses}
                     />
                   </div>
@@ -197,27 +267,50 @@ export default function Contact() {
                   />
                 </div>
 
+                {status === "error" && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+                    {errorMessage} You can also reach us directly at{" "}
+                    <a href={`mailto:${COMPANY.email}`} className="font-semibold underline">
+                      {COMPANY.email}
+                    </a>{" "}
+                    or {COMPANY.phone}.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="group btn-shine mt-1 inline-flex items-center justify-center gap-2.5 rounded-xl bg-slate-950 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-slate-900/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal-800"
+                  disabled={status === "sending"}
+                  className="group btn-shine mt-1 inline-flex items-center justify-center gap-2.5 rounded-xl bg-slate-950 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-slate-900/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                 >
-                  Submit Project Inquiry
-                  <svg
-                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  {status === "sending" ? (
+                    <>
+                      <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                      </svg>
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      Submit Project Inquiry
+                      <svg
+                        className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </>
+                  )}
                 </button>
 
                 <p className="text-center text-xs text-slate-400">
-                  No mailing lists. No sales sequences. Your inquiry goes straight to engineering.
+                  Delivered securely via the matelso platform. No mailing lists, no sales sequences.
                 </p>
               </form>
             )}

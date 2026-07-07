@@ -34,24 +34,24 @@ export const HERO = {
   headlineTop: "Engineering",
   headlineMiddle: "Your Success",
   headlineBottom: "Story.",
-  lede: "triqualis is a senior-led software engineering firm operating at both ends of the stack — from register-level C/C++ firmware and performance-critical desktop systems to globally distributed cloud, web, and SaaS architectures.",
-  sublede: "Enterprises across Europe and North America engage us when the problem is too low-level for a typical web shop and too fast-moving for a traditional systems house. We close that gap with one accountable team: rigorous systems engineering discipline, delivered at modern product velocity.",
+  lede: "triqualis is a senior-led software engineering firm operating at both ends of the stack — from performance-critical C++ and C# systems to modern websites, cloud platforms, and SaaS products.",
+  sublede: "Companies across Europe and North America engage us when the problem is too low-level for a typical web shop and too fast-moving for a traditional systems house. We close that gap with one accountable team: rigorous engineering discipline, delivered at product velocity.",
   primaryCta: { label: "Schedule a Consultation", href: "#contact" },
   secondaryCta: { label: "Explore Our Capabilities", href: "#services" },
-  trustLine: "Trusted by high-demand SaaS platforms and industrial engineering teams",
+  trustLine: "Trusted by high-demand SaaS platforms and product companies across Europe",
 } as const;
 
 export const HERO_TICKER = [
   "C / C++ Systems Engineering",
-  "QT / QML Interfaces",
+  "C# / .NET Development",
   "Enterprise SaaS Platforms",
-  "React & Node.js Delivery",
-  "Embedded & Real-Time",
+  "Website Design & Delivery",
+  "React & Node.js",
   "Cloud-Native Architecture",
-  "Dedicated Engineering Pods",
-  "Odoo Enterprise Solutions",
+  "Team Augmentation",
+  "QT / QML Interfaces",
   "DevOps & CI/CD Pipelines",
-  "Mission-Critical Desktop",
+  "Technical Consulting",
 ] as const;
 
 /* ---- Stats / Scale ------------------------------------------------------ */
@@ -71,7 +71,7 @@ export const STATS: Stat[] = [
   {
     value: "Any Role",
     label: "Positions We Staff",
-    detail: "C/C++, QT, web frontend, backend, DevOps, Odoo — tell us the position and we quickly source a vetted engineer to fill it.",
+    detail: "C/C++, C#, frontend, backend, DevOps — tell us the position and we quickly source a vetted engineer to fill it.",
   },
   {
     value: "E2E",
@@ -86,7 +86,7 @@ export const STATS: Stat[] = [
   {
     value: "C++ → Cloud",
     label: "Stack Coverage",
-    detail: "From register-level embedded and desktop systems to modern web, SaaS, and cloud platforms — both ends of the stack, one team.",
+    detail: "High-performance C++ and C# systems on one side, websites, SaaS, and cloud platforms on the other — one team covers it all.",
   },
   {
     value: "1 day",
@@ -131,11 +131,11 @@ export const VALUES: CoreValue[] = [
   {
     index: "03",
     title: "Innovation",
-    headline: "Active R&D in modern C++ and cloud-native architecture.",
-    body: "We don't just apply known patterns — we invest in staying ahead of them. Our engineers run internal working groups on modern C++ (C++20/23, coroutines, lock-free concurrency), evaluate emerging cloud primitives before clients need them, and feed those findings directly back into production engagements. When your platform hits a wall others call 'impossible,' that research is what gets you through it.",
+    headline: "Staying ahead in systems programming and cloud architecture.",
+    body: "We don't just apply known patterns — we invest in staying ahead of them. Our engineers continuously sharpen their craft across the stack: following language and tooling advances in low-level systems work, evaluating emerging cloud primitives before clients need them, and feeding those findings directly back into production engagements. When your platform hits a wall others call 'impossible,' that habit is what gets you through it.",
     points: [
-      "Internal C++20/23 and systems-performance working groups",
-      "Continuous evaluation of cloud, edge, and tooling advances",
+      "Continuous learning in systems performance and modern tooling",
+      "Early evaluation of cloud, edge, and platform advances",
       "Innovation applied to production, not confined to labs",
     ],
   },
@@ -149,24 +149,24 @@ export const ABOUT = {
   paragraphs: [
     "triqualis was founded in 2024 in Yerevan with a specific thesis: the global market is saturated with web agencies and staffed to the ceiling with generalists, yet critically short of teams who can move fluently between low-level systems programming and modern cloud product engineering. We built the firm to occupy exactly that intersection.",
     "Armenia was not a cost decision — it was a talent decision. The country carries one of the deepest mathematical and engineering traditions in the region, a legacy of Soviet-era scientific institutes that made Yerevan a computing research center decades before 'tech hub' was a phrase. Today that lineage feeds a thriving ecosystem of engineers who grew up on algorithms, compilers, and hard systems problems — precisely the profile that thrives on the work we take.",
-    "The result is a firm that is small by design and senior-led by policy. Every triqualis engineer is expected to reason from first principles, communicate directly with client stakeholders, and hold the same bar whether the artifact is a lock-free queue in C++ or a multi-region deployment pipeline.",
+    "The result is a firm that is small by design and senior-led by policy. Every triqualis engineer is expected to reason from first principles, communicate directly with client stakeholders, and hold the same bar whether the artifact is low-level systems code or a multi-region deployment pipeline.",
   ],
   pillars: [
     {
       title: "High-Performance Systems",
-      subtitle: "C / C++ · Desktop · Embedded",
-      description: "Firmware, real-time processing, mission-critical desktop suites, and QT/QML interfaces engineered for determinism, memory discipline, and decade-long maintainability. This is the work most agencies can't touch — and the foundation of our reputation.",
+      subtitle: "C++ · C# · Desktop",
+      description: "C++ and C# engineering where performance and correctness are non-negotiable: desktop applications, compute-heavy services, and QT/QML interfaces built for decade-long maintainability. This is the work most agencies can't touch — and the foundation of our reputation.",
     },
     {
-      title: "Agile Modern Web",
-      subtitle: "React · Node · Cloud",
-      description: "Multi-tenant SaaS platforms, high-throughput APIs, and cloud-native infrastructure delivered with product-grade velocity. Type-safe codebases, automated pipelines, observability from day one — modern web engineering without the fragility.",
+      title: "Web & SaaS Delivery",
+      subtitle: "Websites · React · Node · Cloud",
+      description: "Company websites, multi-tenant SaaS platforms, and high-throughput APIs delivered with product-grade velocity. Type-safe codebases, automated pipelines, observability from day one — modern web engineering without the fragility.",
     },
   ],
   milestones: [
     { year: "2024", event: "Founded in Yerevan by senior systems and platform engineers." },
     { year: "2024", event: "First enterprise SaaS engagement enters production within one quarter." },
-    { year: "2025", event: "Deep engineering partnership with matelso; embedded & QT practice formalized." },
+    { year: "2025", event: "Partnership with matelso begins — triqualis developers join their product teams." },
     { year: "2026", event: "Flexible engagement network spanning systems, platform, and enterprise practices." },
   ],
 } as const;
@@ -184,44 +184,44 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-    id: "custom-software",
-    title: "Custom Software Engineering",
-    tagline: "Full-cycle Web, Enterprise SaaS & Mission-Critical Desktop",
-    description: "End-to-end ownership from discovery through production operation. We architect and build multi-tenant SaaS platforms, complex line-of-business web applications, and desktop systems where failure is not an option. Every codebase ships with automated test coverage, CI/CD pipelines, observability, and documentation your internal teams can actually inherit.",
+    id: "web-saas",
+    title: "Web & SaaS Engineering",
+    tagline: "Websites, Web Applications & Enterprise SaaS",
+    description: "Full ownership from discovery through production operation. We design and build company websites, complex web applications, and multi-tenant SaaS platforms — with automated test coverage, CI/CD pipelines, observability, and documentation your internal teams can actually inherit.",
     deliverables: [
+      "Company websites — designed, built & deployed",
+      "Web applications (React, Vue, Node.js)",
       "Multi-tenant SaaS architecture & delivery",
-      "Enterprise web applications (React, Vue, Node.js)",
-      "Mission-critical desktop systems (C++, C#, QT)",
-      "API design — REST, GraphQL, gRPC, event-driven",
+      "API design — REST, GraphQL, gRPC",
       "Cloud infrastructure, CI/CD & observability baked in",
     ],
     accent: "teal",
   },
   {
-    id: "embedded-systems",
-    title: "Embedded & Systems Programming",
-    tagline: "Performance-Critical C/C++ & QT/QML Interfaces",
-    description: "Our defining discipline. We engineer firmware, real-time data paths, hardware-adjacent services, and rich QT/QML interfaces where every allocation, every lock, and every microsecond is accounted for. Static analysis, sanitizer-clean builds, and deterministic memory strategies are standard practice — because in this class of software, 'mostly correct' is a defect.",
+    id: "cpp-csharp-systems",
+    title: "C++ & C# Systems",
+    tagline: "Desktop, Compute-Critical & QT/QML",
+    description: "Our deepest discipline. We build software where performance and correctness are non-negotiable — desktop applications, compute-critical services, and rich QT/QML interfaces where every allocation and every millisecond is accounted for. Static analysis, sanitizer-clean builds, and disciplined code review are standard practice, because in this class of software 'mostly correct' is a defect.",
     deliverables: [
-      "Modern C++ (C++17/20/23) application & library engineering",
-      "Embedded firmware & RTOS-based development",
-      "QT / QML industrial and instrumentation interfaces",
-      "Performance engineering: profiling, SIMD, lock-free concurrency",
-      "Legacy C/C++ modernization & long-term stewardship",
+      "Modern C/C++ application & library engineering",
+      "C# / .NET desktop & backend systems",
+      "QT / QML interface development",
+      "Performance engineering & profiling",
+      "Legacy codebase modernization & long-term stewardship",
     ],
     accent: "yellow",
   },
   {
     id: "team-augmentation",
     title: "Team Augmentation & Flexibility",
-    tagline: "Dedicated Pods, Team Extensions & Technical Consulting",
-    description: "Engineering capacity shaped to your organization, not the other way around. Dedicated pods that own a product area end-to-end, individual senior engineers embedded into your existing squads and ceremonies, or focused consulting engagements — architecture reviews, performance audits, C++ modernization roadmaps — when you need judgment more than headcount.",
+    tagline: "Dedicated Teams, Team Extensions & Technical Consulting",
+    description: "Engineering capacity shaped to your organization, not the other way around. A dedicated team that owns a product area, individual senior developers who join your existing squads and ceremonies, or focused consulting engagements — architecture reviews, performance audits, modernization roadmaps — when you need judgment more than headcount.",
     deliverables: [
-      "Dedicated engineering pods (3–8 engineers + lead)",
+      "Dedicated development teams with a named lead",
       "Seamless team extension inside your tools & rituals",
       "Expert technical consulting & architecture review",
       "Performance audits & modernization roadmaps",
-      "Flexible scaling — grow or contract with 2 weeks' notice",
+      "Flexible scaling — grow or contract as the project demands",
     ],
     accent: "slate",
   },
@@ -249,8 +249,8 @@ export const PROCESS: ProcessStep[] = [
     step: "02",
     title: "Team Assembly",
     duration: "Week 2–3",
-    description: "We compose a pod matched to your stack and domain — systems engineers for the C++ core, platform engineers for cloud and web, a technical lead accountable to your leadership. Every member is briefed on the audit before their first commit. You approve the roster; we guarantee its seniority.",
-    outcomes: ["Dedicated pod with named lead", "Shared tooling, access & rituals", "Sprint zero: environments & CI live"],
+    description: "We compose a team matched to your stack and domain — systems engineers for the low-level core, platform engineers for cloud and web, a technical lead accountable to your leadership. Every member is briefed on the audit before their first commit. You approve the roster; we guarantee its seniority.",
+    outcomes: ["Dedicated team with a named lead", "Shared tooling, access & rituals", "Sprint zero: environments & CI live"],
   },
   {
     step: "03",
@@ -263,7 +263,7 @@ export const PROCESS: ProcessStep[] = [
     step: "04",
     title: "Evolution & Scale",
     duration: "Long-term",
-    description: "Shipping v1 is the midpoint, not the finish line. We operate what we build — hardening for scale, driving down latency and cost, extending the platform as your product grows, and transferring knowledge to your internal teams on whatever timeline serves you. Many clients scale their pod; others hand off entirely. Both are success.",
+    description: "Shipping v1 is the midpoint, not the finish line. We operate what we build — hardening for scale, driving down latency and cost, extending the platform as your product grows, and transferring knowledge to your internal teams on whatever timeline serves you. Many clients grow their team with us; others hand off entirely. Both are success.",
     outcomes: ["Production operation & SLO ownership", "Performance & cost optimization", "Structured knowledge transfer"],
   },
 ];
@@ -318,18 +318,18 @@ export const TECH_STACK: TechCategory[] = [
   },
   {
     id: "systems",
-    label: "Embedded / C++",
-    title: "Performance & low-level — our home turf",
-    description: "The discipline that defines triqualis. Modern C++ with sanitizer-clean builds, deterministic memory strategies, real-time constraints honored by design, and QT/QML front-ends for industrial-grade tooling.",
+    label: "C++ / C# Systems",
+    title: "Performance-critical software — our home turf",
+    description: "Modern C++ and C# with sanitizer-clean builds, disciplined memory management, and QT/QML front-ends for rich desktop tooling — engineered for the workloads where every millisecond counts.",
     items: [
-      { name: "C", note: "Firmware & kernel-adjacent" },
+      { name: "C", note: "Low-level & systems code" },
       { name: "C++", note: "C++17 / 20 / 23" },
-      { name: "QT / QML", note: "Industrial UIs & tooling" },
+      { name: "C# / .NET", note: "Desktop & services" },
+      { name: "QT / QML", note: "Rich desktop UIs" },
       { name: "CMake / Conan", note: "Reproducible builds" },
-      { name: "RTOS / Embedded Linux", note: "Real-time targets" },
       { name: "Sanitizers & Static Analysis", note: "ASan, UBSan, clang-tidy" },
-      { name: "Profiling & SIMD", note: "perf, VTune, vectorization" },
-      { name: "Lock-Free Concurrency", note: "Atomics done right" },
+      { name: "Profiling & Optimization", note: "Hot paths, memory, I/O" },
+      { name: "Concurrency & Multithreading", note: "Correct under load" },
     ],
   },
   {
@@ -359,7 +359,7 @@ export const CASE_STUDY = {
   clientDescriptor: "High-demand European call-tracking & lead-management SaaS",
   title: "Embedded inside matelso — our biggest engineering partnership.",
   narrative: [
-    "matelso is triqualis' biggest and closest partner: a high-demand European SaaS platform for real-time call tracking and lead management, operating in a market where downtime is directly measurable in lost customer revenue. It is also the clearest proof of how we work.",
+    "matelso is triqualis' closest partner: a leading European SaaS platform for real-time call tracking and lead management, operating in a market where downtime is directly measurable in lost customer revenue. It is also the clearest proof of how we work.",
     "Our developers aren't an external vendor throwing code over a wall — they work alongside matelso's own engineers as full members of the product teams: the same standups, the same sprint boards, the same codebase and quality bar. That depth of integration demands exactly the dual competency triqualis was built for — low-level runtime discipline to keep performance-critical paths deterministic under load, and modern SaaS engineering to ship features at the pace the market requires.",
     "The result of working this way: seamless integration with zero disruption to running operations, sustained release velocity through rapid platform growth, and runtime behavior the operations team describes in one word — bulletproof.",
   ],
@@ -368,7 +368,7 @@ export const CASE_STUDY = {
     { metric: "Elastic", label: "Scalability sustained through rapid platform and traffic growth" },
     { metric: "Bulletproof", label: "Runtime execution across performance-critical service paths" },
   ],
-  sectors: ["SaaS Platforms", "Telecommunications", "Industrial & Instrumentation", "Enterprise Operations", "MarTech"],
+  sectors: ["SaaS Platforms", "Telecommunications", "MarTech", "Enterprise Software"],
 } as const;
 
 /* ---- Contact -------------------------------------------------------------- */
@@ -387,7 +387,7 @@ export const CONTACT = {
     {
       label: "Email",
       value: "info@triqualis.com",
-      sub: "Reviewed by a senior engineer within one business day",
+      sub: "For documents, RFPs, and anything longer than a form",
       icon: "email" as const,
     },
     {
@@ -401,7 +401,7 @@ export const CONTACT = {
     "Hire Developers — extend my team",
     "End-to-End Project Delivery",
     "Web, Cloud & SaaS Development",
-    "Embedded & C/C++ Systems",
+    "C++ / C# Systems & Desktop",
     "Consulting or Architecture Review",
     "Something Else / Not Sure Yet",
   ],
@@ -428,8 +428,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     heading: "Services",
     links: [
-      { label: "Custom Software Engineering", href: "#services" },
-      { label: "Embedded & Systems Programming", href: "#services" },
+      { label: "Web & SaaS Engineering", href: "#services" },
+      { label: "C++ & C# Systems", href: "#services" },
       { label: "QT / QML Development", href: "#services" },
       { label: "Team Augmentation", href: "#services" },
       { label: "Technical Consulting", href: "#services" },
@@ -438,7 +438,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     heading: "Expertise",
     links: [
-      { label: "Modern C++ (17/20/23)", href: "#stack" },
+      { label: "C & C++ Systems", href: "#stack" },
       { label: "React & Node.js Platforms", href: "#stack" },
       { label: "Cloud-Native Architecture", href: "#stack" },
       { label: "Odoo Enterprise Solutions", href: "#stack" },

@@ -26,12 +26,12 @@ const logoFace = Manrope({
 export const metadata: Metadata = {
   title: "triqualis — Engineering Your Success Story",
   description:
-    "triqualis is an elite software engineering firm in Yerevan, Armenia — bridging high-performance C/C++ and embedded systems with modern cloud, web, and SaaS platforms for global enterprises.",
+    "triqualis is a senior-led software engineering firm in Yerevan, Armenia — high-performance C++ and C# systems, websites, and SaaS platforms for companies across Europe and North America.",
   keywords: [
     "IT outsourcing",
     "C++ development",
-    "embedded systems",
-    "QT QML",
+    "C# development",
+    "website development",
     "SaaS engineering",
     "team augmentation",
     "Armenia software development",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "triqualis — Engineering Your Success Story",
     description:
-      "Elite engineering hub bridging low-level C/C++ systems with modern cloud and SaaS architectures.",
+      "Senior-led engineering: high-performance C++ and C# systems, modern websites, and SaaS platforms.",
     type: "website",
   },
 };

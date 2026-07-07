@@ -61,8 +61,8 @@ export default function Hero() {
               <span className="flex -space-x-1.5">
                 {[
                   { short: "C++", full: "C / C++ Systems", chip: "bg-teal-700 text-white" },
-                  { short: "TS", full: "TypeScript & Web", chip: "bg-yellow-400 text-slate-950" },
-                  { short: "QT", full: "QT / QML Interfaces", chip: "bg-slate-800 text-white" },
+                  { short: "C#", full: "C# / .NET", chip: "bg-yellow-400 text-slate-950" },
+                  { short: "TS", full: "TypeScript & Web", chip: "bg-slate-800 text-white" },
                 ].map((tech) => (
                   <span key={tech.short} className="group relative hover:z-10">
                     <span
@@ -136,7 +136,7 @@ export default function Hero() {
                 </div>
                 <p className="mt-3.5 text-sm font-bold text-slate-900">Systems Depth</p>
                 <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
-                  C/C++ · embedded · QT/QML — engineered to the microsecond.
+                  C++ · C# · QT/QML — engineered to the millisecond.
                 </p>
               </div>
 
@@ -159,7 +159,7 @@ export default function Hero() {
                 {[
                   { value: "E2E", label: "Project Delivery" },
                   { value: "Any Role", label: "Team Augmentation" },
-                  { value: "C++→Cloud", label: "Stack Coverage" },
+                  { value: "EU + US", label: "Timezone Overlap" },
                 ].map((stat) => (
                   <div key={stat.label} className="px-4 py-4 text-center">
                     <p className="text-xl font-bold tracking-tight text-teal-800">

@@ -38,7 +38,7 @@ export const HERO = {
   sublede: "Companies across Europe engage us when the problem is too low-level for a typical web shop and too fast-moving for a traditional systems house. We close that gap with one accountable team: rigorous engineering discipline, delivered at product velocity.",
   primaryCta: { label: "Schedule a Consultation", href: "#contact" },
   secondaryCta: { label: "Explore Our Capabilities", href: "#services" },
-  trustLine: "Trusted by high-demand SaaS platforms and product companies across Europe",
+  trustLine: "One team, the full stack — from C++ and C# systems to modern web",
 } as const;
 
 export const HERO_TICKER = [

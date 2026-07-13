@@ -71,7 +71,7 @@ export const STATS: Stat[] = [
   {
     value: "Any Role",
     label: "Positions We Staff",
-    detail: "C/C++, C#, frontend, backend, DevOps — tell us the position and we quickly source a vetted engineer to fill it.",
+    detail: "Need one developer or five? Tell us the role and seniority — we source vetted engineers who slot straight into your existing team.",
   },
   {
     value: "E2E",
@@ -85,8 +85,8 @@ export const STATS: Stat[] = [
   },
   {
     value: "C++ → Cloud",
-    label: "Stack Coverage",
-    detail: "High-performance C++ and C# systems on one side, websites, SaaS, and cloud platforms on the other — one team covers it all.",
+    label: "Both Ends of the Stack",
+    detail: "Performance-critical C++ and C# on one side, websites, SaaS, and cloud on the other — a span few firms cover with a single team.",
   },
   {
     value: "1–2 days",

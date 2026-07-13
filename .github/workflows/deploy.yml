@@ -27,12 +27,11 @@ jobs:
 
       - run: npm ci
 
-      # Serve under /<repo-name> (GitHub project pages).
-      # If you attach a custom domain or rename the repo to <user>.github.io,
-      # delete the env block so the site builds for the root path.
+      # Custom domain (triqualis.com) serves from the root path, so no basePath.
+      # If you ever revert to the github.io/<repo> URL, restore:
+      #   env:
+      #     NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
       - run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

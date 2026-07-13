@@ -162,6 +162,11 @@ export const ABOUT = {
       subtitle: "Websites · React · Node · Cloud",
       description: "Company websites, multi-tenant SaaS platforms, and high-throughput APIs delivered with product-grade velocity. Type-safe codebases, automated pipelines, observability from day one — modern web engineering without the fragility.",
     },
+    {
+      title: "Flexible Engagement",
+      subtitle: "Team Extension · Full Delivery",
+      description: "Two ways to work with us: embed our developers into your team for any role you need, or hand us a project to own end-to-end. The same senior standard applies either way — you scale the engagement to fit, never the reverse.",
+    },
   ],
   milestones: [
     { year: "2024", event: "Founded in Yerevan by senior systems and platform engineers." },
@@ -247,9 +252,9 @@ export const PROCESS: ProcessStep[] = [
   {
     step: "02",
     title: "Team Assembly",
-    duration: "Week 2–3",
+    duration: "~2 weeks",
     description: "We compose a team matched to your stack and domain — systems engineers for the low-level core, platform engineers for cloud and web, a technical lead accountable to your leadership. Every member is briefed on the audit before their first commit. You approve the roster; we guarantee its seniority.",
-    outcomes: ["Dedicated team with a named lead", "Shared tooling, access & rituals", "Sprint zero: environments & CI live"],
+    outcomes: ["Dedicated team with a named lead", "Shared tooling, access & rituals", "Dev environments & pipelines ready to ship"],
   },
   {
     step: "03",

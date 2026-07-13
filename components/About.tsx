@@ -58,48 +58,20 @@ export default function About() {
 
           {/* Pillars column */}
           <div className="flex flex-col gap-6 lg:pt-24">
-            <div className="rounded-2xl border premium-border bg-[#f6f8fb] p-6 shadow-sm">
-              <p className="text-sm leading-relaxed text-slate-600">
-                <span className="font-bold text-slate-900">Why Armenia?</span> A century-deep
-                mathematical tradition, elite engineering universities, and one of the
-                fastest-growing tech ecosystems in the region — Yerevan produces the exact
-                profile of engineer triqualis is built on: rigorous, first-principles,
-                systems-minded.
-              </p>
-            </div>
-
             {ABOUT.pillars.map((pillar, i) => (
               <article
                 key={pillar.title}
-                className={`card-shine group relative overflow-hidden rounded-2xl p-8 shadow-xl transition-transform duration-300 hover:-translate-y-1 ${
-                  i === 0
-                    ? "bg-[#0b1120] text-white shadow-slate-900/20"
-                    : "border premium-border bg-white shadow-slate-900/8"
-                }`}
+                className="card-shine group relative overflow-hidden rounded-2xl bg-[#0b1120] p-8 text-white shadow-xl shadow-slate-900/20 transition-transform duration-300 hover:-translate-y-1"
               >
-                {i === 0 && (
-                  <div className="bg-grid-light absolute inset-0 opacity-60" aria-hidden="true" />
-                )}
+                <div className="bg-grid-light absolute inset-0 opacity-60" aria-hidden="true" />
                 <div className="relative">
-                  <span
-                    className={`inline-block rounded-lg px-3 py-1 font-mono text-[11px] font-bold tracking-wider uppercase ${
-                      i === 0 ? "bg-white/10 text-yellow-200" : "bg-teal-50 text-teal-800"
-                    }`}
-                  >
+                  <span className="inline-block rounded-lg bg-white/10 px-3 py-1 font-mono text-[11px] font-bold tracking-wider text-yellow-200 uppercase">
                     Pillar {i + 1} · {pillar.subtitle}
                   </span>
-                  <h3
-                    className={`mt-4 text-xl font-semibold tracking-tight ${
-                      i === 0 ? "text-white" : "text-slate-900"
-                    }`}
-                  >
+                  <h3 className="mt-4 text-xl font-semibold tracking-tight text-white">
                     {pillar.title}
                   </h3>
-                  <p
-                    className={`mt-3 text-sm leading-relaxed ${
-                      i === 0 ? "text-slate-300" : "text-slate-600"
-                    }`}
-                  >
+                  <p className="mt-3 text-sm leading-relaxed text-slate-300">
                     {pillar.description}
                   </p>
                 </div>

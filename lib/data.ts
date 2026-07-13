@@ -35,7 +35,7 @@ export const HERO = {
   headlineMiddle: "Your Success",
   headlineBottom: "Story.",
   lede: "triqualis is a senior-led software engineering firm operating at both ends of the stack — from performance-critical C++ and C# systems to modern websites, cloud platforms, and SaaS products.",
-  sublede: "Companies across Europe and North America engage us when the problem is too low-level for a typical web shop and too fast-moving for a traditional systems house. We close that gap with one accountable team: rigorous engineering discipline, delivered at product velocity.",
+  sublede: "Companies across Europe engage us when the problem is too low-level for a typical web shop and too fast-moving for a traditional systems house. We close that gap with one accountable team: rigorous engineering discipline, delivered at product velocity.",
   primaryCta: { label: "Schedule a Consultation", href: "#contact" },
   secondaryCta: { label: "Explore Our Capabilities", href: "#services" },
   trustLine: "Trusted by high-demand SaaS platforms and product companies across Europe",
@@ -89,9 +89,9 @@ export const STATS: Stat[] = [
     detail: "High-performance C++ and C# systems on one side, websites, SaaS, and cloud platforms on the other — one team covers it all.",
   },
   {
-    value: "1 day",
+    value: "1–2 days",
     label: "Response Time",
-    detail: "Every inquiry is reviewed by a senior engineer and answered within one business day — with an honest read on fit.",
+    detail: "Every inquiry is read by an engineer, not a sales rep — and we reply as quickly as we can, usually within a day or two.",
   },
 ];
 
@@ -121,7 +121,7 @@ export const VALUES: CoreValue[] = [
     index: "02",
     title: "Budget",
     headline: "Hyper-efficient cost structures. Zero compromise on rigor.",
-    body: "Operating from Armenia's elite engineering ecosystem lets us field genuinely senior teams at a fraction of Western European or North American rates — without the quality erosion typical of offshore staffing. Fixed, transparent pricing models, no pyramid of billable juniors, and an efficiency discipline that treats every engineering hour as your capital, because it is.",
+    body: "Operating from Armenia's elite engineering ecosystem lets us field genuinely senior teams at a fraction of Western European rates — without the quality erosion typical of offshore staffing. It's an efficiency discipline that treats every engineering hour as your capital, because it is.",
     points: [
       "Senior-led teams — no unsupervised juniors, ever",
       "Transparent, predictable engagement pricing",
@@ -165,7 +165,6 @@ export const ABOUT = {
   ],
   milestones: [
     { year: "2024", event: "Founded in Yerevan by senior systems and platform engineers." },
-    { year: "2024", event: "First enterprise SaaS engagement enters production within one quarter." },
     { year: "2025", event: "Partnership with matelso begins — triqualis developers join their product teams." },
     { year: "2026", event: "Flexible engagement network spanning systems, platform, and enterprise practices." },
   ],
@@ -363,6 +362,13 @@ export const CASE_STUDY = {
     "Our developers aren't an external vendor throwing code over a wall — they work alongside matelso's own engineers as full members of the product teams: the same standups, the same sprint boards, the same codebase and quality bar. That depth of integration demands exactly the dual competency triqualis was built for — low-level runtime discipline to keep performance-critical paths deterministic under load, and modern SaaS engineering to ship features at the pace the market requires.",
     "The result of working this way: seamless integration with zero disruption to running operations, sustained release velocity through rapid platform growth, and runtime behavior the operations team describes in one word — bulletproof.",
   ],
+  testimonial: {
+    quote:
+      "A big thanks goes out to our software development partners at triqualis for an amazing year of collaboration and innovation. Their expertise has been a key asset in driving our projects forward.",
+    author: "matelso GmbH",
+    context: "One year of partnership · via LinkedIn",
+    url: "https://www.linkedin.com/posts/matelso_triqualis-activity-7380855595249332224-m79y",
+  },
   highlights: [
     { metric: "Seamless", label: "Integration into existing architecture, standards & release trains" },
     { metric: "Elastic", label: "Scalability sustained through rapid platform and traffic growth" },
@@ -376,12 +382,12 @@ export const CASE_STUDY = {
 export const CONTACT = {
   eyebrow: "Enterprise Contact Hub",
   title: "Let's scope your next engineering initiative.",
-  description: "Tell us what you're building — or what's breaking. A senior engineer (never a sales rep) reviews every inquiry and responds within one business day with an honest read on fit, approach, and timeline.",
+  description: "Tell us what you're building — or what's breaking. An engineer — never a sales rep — reads every inquiry and replies with an honest read on fit, approach, and timeline, usually within a day or two.",
   channels: [
     {
       label: "Corporate HQ",
       value: "Yerevan, Armenia",
-      sub: "Engineering operations · GMT+4, overlapping EU & US-East hours",
+      sub: "Engineering operations · GMT+4, overlapping European business hours",
       icon: "location" as const,
     },
     {
@@ -448,7 +454,5 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
 ];
 
 export const SOCIALS = [
-  { label: "LinkedIn", href: "#", icon: "linkedin" as const },
-  { label: "GitHub", href: "#", icon: "github" as const },
-  { label: "X / Twitter", href: "#", icon: "x" as const },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/triqualis", icon: "linkedin" as const },
 ];

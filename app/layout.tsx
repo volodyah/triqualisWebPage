@@ -26,7 +26,7 @@ const logoFace = Manrope({
 export const metadata: Metadata = {
   title: "triqualis — Engineering Your Success Story",
   description:
-    "triqualis is a senior-led software engineering firm in Yerevan, Armenia — high-performance C++ and C# systems, websites, and SaaS platforms for companies across Europe and North America.",
+    "triqualis is a senior-led software engineering firm in Yerevan, Armenia — high-performance C++ and C# systems, websites, and SaaS platforms for companies across Europe.",
   keywords: [
     "IT outsourcing",
     "C++ development",

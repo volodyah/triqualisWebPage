@@ -60,6 +60,28 @@ export default function CaseStudy() {
                 </p>
               ))}
             </div>
+
+            {/* Public endorsement from matelso */}
+            <figure className="mt-8 rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur">
+              <svg className="h-6 w-6 text-yellow-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M7.5 6C5 6 3 8 3 10.5S5 15 7.5 15c.2 0 .4 0 .6-.05C7.3 16.6 5.8 18 4 18.5c-.4.1-.6.5-.5.9.1.4.5.6.9.5 3.3-.9 5.6-3.9 5.6-7.4V10.5C10 8 8 6 7.5 6zm9 0C14 6 12 8 12 10.5s2 4.5 4.5 4.5c.2 0 .4 0 .6-.05-.8 1.65-2.3 3.05-4.1 3.55-.4.1-.6.5-.5.9.1.4.5.6.9.5 3.3-.9 5.6-3.9 5.6-7.4V10.5C19 8 17 6 16.5 6z" />
+              </svg>
+              <blockquote className="mt-3 text-[15px] leading-relaxed font-medium text-white">
+                {CASE_STUDY.testimonial.quote}
+              </blockquote>
+              <figcaption className="mt-4 flex items-center gap-2 text-sm">
+                <span className="font-semibold text-white">{CASE_STUDY.testimonial.author}</span>
+                <span className="text-slate-500">·</span>
+                <a
+                  href={CASE_STUDY.testimonial.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 underline decoration-slate-600 underline-offset-2 transition-colors hover:text-yellow-200"
+                >
+                  {CASE_STUDY.testimonial.context}
+                </a>
+              </figcaption>
+            </figure>
           </div>
 
           {/* Highlights & sectors */}

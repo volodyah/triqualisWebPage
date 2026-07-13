@@ -132,15 +132,14 @@ export default function Contact() {
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-yellow-300" />
                   <p className="font-mono text-xs font-bold tracking-wider text-yellow-200 uppercase">
-                    Response SLA
+                    How We Respond
                   </p>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                  Every inquiry is triaged by a{" "}
-                  <span className="font-semibold text-white">senior engineer</span> — expect a
-                  substantive technical response within{" "}
-                  <span className="font-semibold text-white">one business day</span>, including an
-                  honest assessment if we're not the right fit.
+                  Every inquiry is read by an{" "}
+                  <span className="font-semibold text-white">engineer</span>, not a sales rep — with
+                  a substantive technical reply, including an honest assessment if we're not the
+                  right fit. We get back to you as quickly as we can, usually within a day or two.
                 </p>
               </div>
             </div>
@@ -157,8 +156,9 @@ export default function Contact() {
                 </span>
                 <h3 className="mt-6 text-2xl font-bold text-slate-900">Inquiry sent.</h3>
                 <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">
-                  Your inquiry has been delivered — a senior triqualis engineer will review it and
-                  respond within one business day. For urgent matters, call us directly at{" "}
+                  Your inquiry has been delivered — a triqualis engineer will review it and get back
+                  to you as soon as we can, usually within a day or two. For urgent matters, call us
+                  directly at{" "}
                   <span className="font-semibold text-slate-900">{COMPANY.phone}</span>.
                 </p>
                 <button

@@ -90,8 +90,8 @@ export default function Hero() {
               </span>
             </div>
             <div className="absolute -right-2 -bottom-5 z-10 hidden items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-xl shadow-slate-900/8 sm:flex">
-              <span className="font-mono text-xs font-bold text-teal-700">1 day</span>
-              <span className="text-xs font-semibold text-slate-800">inquiry response</span>
+              <span className="font-mono text-xs font-bold text-teal-700">GMT+4</span>
+              <span className="text-xs font-semibold text-slate-800">Yerevan, Armenia</span>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -159,7 +159,7 @@ export default function Hero() {
                 {[
                   { value: "E2E", label: "Project Delivery" },
                   { value: "Any Role", label: "Team Augmentation" },
-                  { value: "EU + US", label: "Timezone Overlap" },
+                  { value: "EU Hours", label: "Timezone Overlap" },
                 ].map((stat) => (
                   <div key={stat.label} className="px-4 py-4 text-center">
                     <p className="text-xl font-bold tracking-tight text-teal-800">
